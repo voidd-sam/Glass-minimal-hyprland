@@ -35,7 +35,7 @@
 
 | File picker | Neovim |
 |:---:|:---:|
-| ![File-picker](assets/preview6.png) | ![](assets/preview7.png) |
+| ![File-picker](assets/preview6.png) | ![Neovim](assets/preview7.png) |
 
 
 
