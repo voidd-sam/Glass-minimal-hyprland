@@ -149,9 +149,9 @@ The script installs all dependencies and copies the configs automatically.
 | `ladder + m` | Exit Hyprland |
 | `ladder + 1-9` | Switch workspace |
 | `ladder + Shift + 1-9` | Move window to workspace |
-| `Super + Arrow / Mouse` | Move / resize windows |
-| `Super + B` | Open browser |
-| `Super + F` | File manager |
+| `ladder + Arrow / Mouse` | Move / resize windows |
+| `ladder + B` | Open browser |
+| `ladder + F` | File manager |
 | `Super + V` | Toggle floating |
 | `Print` | Screenshot |
 | `Super + L` | Lock screen |
