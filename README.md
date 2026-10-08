@@ -138,7 +138,23 @@ The script installs all dependencies and copies the configs automatically.
 
 >  Full list lives in `~/.config/hypr/keybinds.conf` -remap freely.
 
+## Neovim Keymaps
 
+Built on LazyVim using fzf-lua. The <leader> key is set to Space.
+Keys	Action	Description
+<leader> + a	Select all	Selects entire buffer content
+<leader> + ff	Find Files	Search for files in the current directory
+<leader> + fg	Live Grep	Search for a string across all files
+<leader> + fb	Find Buffers	Switch between open buffers
+<leader> + fr	Find Recent	Open recently opened files
+<leader> + f.	Resume	Reopens the last used fzf picker
+<leader> + fw	Grep word	Grep the word currently under the cursor
+<leader> + gc	Git Commits	Browse git commit history
+<leader> + gs	Git Status	View current git status changes
+<leader> + fs	LSP Symbols	Browse document symbols (LSP)
+Ctrl + t	New Tab	Open a new empty tab
+
+     Neovim config is modular and lives in ~/.config/nvim/.
 
 ##  Repository Structure
 
