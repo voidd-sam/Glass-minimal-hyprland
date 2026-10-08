@@ -33,6 +33,10 @@
 |:---:|:---:|
 | ![Launcher](assets/preview3.png) | ![Btop](assets/preview2.png) |
 
+| File picker | Neovim |
+|:---:|:---:|
+| ![File-picker](assets/preview6.png) | ![](assets/preview7.png) |
+
 
 
 ##  Features
