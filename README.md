@@ -143,12 +143,12 @@ The script installs all dependencies and copies the configs automatically.
 
 | Keys | Action |
 |---|---|
-| `Super + q` | Open terminal |
-| `Super + c` | Close window |
-| `Super + space` | App launcher |
-| `Super + m` | Exit Hyprland |
-| `Super + 1-9` | Switch workspace |
-| `Super + Shift + 1-9` | Move window to workspace |
+| `ladder + q` | Open terminal |
+| `ladder + c` | Close window |
+| `ladder + space` | App launcher |
+| `ladder + m` | Exit Hyprland |
+| `ladder + 1-9` | Switch workspace |
+| `ladder + Shift + 1-9` | Move window to workspace |
 | `Super + Arrow / Mouse` | Move / resize windows |
 | `Super + B` | Open browser |
 | `Super + F` | File manager |
