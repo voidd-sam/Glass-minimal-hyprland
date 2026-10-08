@@ -151,7 +151,7 @@ The script installs all dependencies and copies the configs automatically.
 | `ladder + Shift + 1-9` | Move window to workspace |
 | `ladder + Arrow / Mouse` | Move / resize windows |
 | `ladder + B` | Open browser |
-| `ladder + F` | File manager |
+| `leader + F` | File manager |
 | `Super + V` | Toggle floating |
 | `Print` | Screenshot |
 | `Super + L` | Lock screen |
