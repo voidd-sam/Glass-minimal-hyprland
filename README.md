@@ -140,21 +140,26 @@ The script installs all dependencies and copies the configs automatically.
 
 ## Neovim Keymaps
 
+
 | Keys | Action |
 |---|---|
+| `Super + q` | Open terminal |
+| `Super + c` | Close window |
+| `Super + space` | App launcher |
+| `Super + m` | Exit Hyprland |
+| `Super + 1-9` | Switch workspace |
+| `Super + Shift + 1-9` | Move window to workspace |
+| `Super + Arrow / Mouse` | Move / resize windows |
+| `Super + B` | Open browser |
+| `Super + F` | File manager |
+| `Super + V` | Toggle floating |
+| `Print` | Screenshot |
+| `Super + L` | Lock screen |
+
+>  Full list lives in `~/.config/nvim/keybinds.conf
 
 
-<leader> + a	Select all
-<leader> + ff	Find files
-<leader> + fg	Live grep
-<leader> + fb	Find buffers
-<leader> + fr	Find recent files
-<leader> + f.	Resume last picker
-<leader> + fw	Grep word under cursor
-<leader> + gc	Git commits
-<leader> + gs	Git status
-<leader> + fs	LSP symbols
-Ctrl + t	New tab
+
 
 ##  Repository Structure
 
