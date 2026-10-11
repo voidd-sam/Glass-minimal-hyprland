@@ -203,7 +203,7 @@ Found a bug or have an idea to make **Glass** even cleaner?
 
 
 
-##  Show Some Love
+##  Please consider giving a star if yiu like this setup
 
 If this setup made your desktop prettier, consider dropping a **star** it helps others find it too.
 
