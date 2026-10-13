@@ -156,7 +156,7 @@ The script installs all dependencies and copies the configs automatically.
 | `Print` | Screenshot |
 | `Super + L` | Lock screen |
 
->  Full list lives in `~/.config/nvim/keybinds.conf
+>  Full list lives in you can customize as per your will `~/.config/nvim/keybinds.conf
 
 
 
