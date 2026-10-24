@@ -77,8 +77,7 @@ hl.window_rule({
 -- Bluetui floating popup
 hl.window_rule({
 	name = "bluetui-float",
-	match = { title = "bluetui" },
-
+	match = { class = "bluetui" },
 	float = true,
 	size = { 440, 540 },
 })
@@ -86,7 +85,7 @@ hl.window_rule({
 --nmtui popup window
 hl.window_rule({
 	name = "nmtui-float",
-	match = { title = "nmtui" },
+	match = { class = "nmtui" },
 	float = true,
 	size = { 500, 600 },
 })

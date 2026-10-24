@@ -1,8 +1,8 @@
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 local env = require("modules.environment_variables") -- local variable for terminal & filemanager in keybinding
 
-hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(env.terminal))
-local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
+hl.bind(mainMod .. " + q", hl.dsp.exec_cmd(env.terminal))
+local closeWindowBind = hl.bind(mainMod .. " + c", hl.dsp.window.close())
 
 -- closeWindowBind:set_enabled(false)
 
@@ -17,7 +17,7 @@ hl.bind(mainMod .. " + p", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + j", hl.dsp.layout("togglesplit")) -- dwindle only
 hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd("pkill rofi || rofi -show drun -show-icons"))
 hl.bind(mainMod .. " + l", hl.dsp.exec_cmd("hyprlock"))
-hl.bind(mainMod .. " + p", hl.dsp.exec_cmd("kitty -e ~/projects/lyric/launch.sh"))
+hl.bind(mainMod .. " + p", hl.dsp.exec_cmd("kitty -e ~/projects/Ly-ric/launch.sh"))
 
 -- SCREENSHOT--
 --
@@ -48,6 +48,11 @@ for i = 1, 10 do
 	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
+-- Cycle through workspace
+hl.bind(mainMod .. " + Escape", hl.dsp.focus({ workspace = "e+1" }))
+-- Open a fresh empty workspace
+hl.bind(mainMod .. " + t", hl.dsp.focus({ workspace = "empty" }))
+
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
@@ -77,11 +82,19 @@ hl.bind(
 	hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
 	{ locked = true, repeating = true }
 )
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 10%+"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 1%-"), { locked = true, repeating = true })
 
 -- Requires playerctl
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
+
+--[WAYBAR KEYMAPS]
+
+-- Super+B: bluetooth manager (bluetui)
+hl.bind("SUPER + B", hl.dsp.exec_cmd("kitty --class bluetui -e bluetui"))
+
+-- Super+W: wifi manager (nmtui)
+hl.bind("SUPER + W", hl.dsp.exec_cmd("kitty --class nmtui -e nmtui"))

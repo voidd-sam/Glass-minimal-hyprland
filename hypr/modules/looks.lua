@@ -41,7 +41,7 @@ hl.config({
 			passes = 3,
 			vibrancy = 0.1696,
 			new_optimizations = true,
-			xray = true,
+			contrast = 1.1,
 		},
 	},
 
@@ -50,7 +50,19 @@ hl.config({
 	},
 })
 
-layerrule = blur, waybar
-layerrule = ignorezero, waybar
-layerrule = blur, rofi
-layerrule = ignorezero, rofi
+hl.layer_rule({
+	blur = false,
+	ignore_alpha = false,
+	match = { namespace = "waybar" },
+})
+
+-- bouncy overshoot curve
+hl.curve("overshot", { type = "bezier", points = { { 0.05, 0.9 }, { 0.1, 1.1 } } })
+
+hl.animation({
+	leaf = "workspaces",
+	enabled = true,
+	speed = 6,
+	bezier = "overshot",
+	style = "slide",
+})
