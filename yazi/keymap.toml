@@ -1,0 +1,25 @@
+[[mgr.prepend_keymap]]
+on = "o"
+run = "open --interactive"
+desc = "Open with picker"
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "b" ]
+run  = 'shell -- awww img %h && wal -i %h --contrast 1'
+desc = "Set wall + pywal"
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "w" ]
+run  = 'cd ~/WALLPAPERS'
+desc = "Go ~/WALLPAPERS"
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "p" ]
+run  = 'cd ~/projects'
+desc = "Go ~/projects"
+
+
+[[mgr.prepend_keymap]]
+on  = [ "g", "D" ]
+run = 'cd ~/Documents/'
+desc = "Go ~/Documents"
