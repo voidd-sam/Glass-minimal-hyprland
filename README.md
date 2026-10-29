@@ -17,7 +17,7 @@
 
 ##  Overview
 
-**Glass** is full desktop , Hyprland configuration. It combines subtle glassmorphism, smooth animations, and a minimal aesthetic everything you need for a distraction-free yet beautiful workflow, straight out of the box.
+**GM Hyperland** is full desktop ,Hyprland configuration. It combines subtle glassmorphism, smooth animations, and a minimal aesthetic everything you need for a distraction-free yet beautiful workflow, straight out of the box.
 
 
 
