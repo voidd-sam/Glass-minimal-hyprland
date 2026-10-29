@@ -189,20 +189,6 @@ Everything is modular and commented:
 - **Bar modules** → `waybar/config.jsonc`
 
 
-
-
-
-##  Contributing
-
-Found a bug or have an idea to make **Glass** even cleaner?
-
-1. Fork the repo
-2. Create your branch (`git checkout -b feature/amazing-idea`)
-3. Commit changes (`git commit -m ' add amazing idea'`)
-4. Push & open a Pull Request
-
-
-
 ####  Please consider giving a star if you like this setup
 
 If this setup made your desktop prettier, consider dropping a **star** it helps others find it too.
@@ -210,7 +196,3 @@ If this setup made your desktop prettier, consider dropping a **star** it helps 
 <div align="center">
 
 Thanks for stopping by <img src="https://github.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/blob/master/Emojis/Animals/Cat%20Face.png" alt="cat" width="32" height="32" />
-
-
-
-
