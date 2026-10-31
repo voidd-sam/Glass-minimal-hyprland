@@ -1,0 +1,145 @@
+
+/**
+ * Minimal glass launcher: list on the left, big icon + name on the right.
+ * Layout based on the HyprFlow example, colours from pywal.
+ * Needs rofi-wayland >= 1.7.4.
+ *
+ * Blur: add this to your Hyprland Lua config (once):
+ * hl.layer_rule({ name = "rofi-blur", match = { namespace = "rofi" }, blur = true, ignore_alpha = 0.01 })
+ */
+
+configuration {
+    modi:                "drun";
+    show-icons:          true;
+    icon-theme:          "Papirus-Dark";
+    matching:            "fuzzy";
+    sort:                true;
+    cycle:               true;
+    drun-display-format: "{name}";
+    drun-match-fields:   "name,generic,exec,categories,keywords";
+    font:                "JetBrainsMono Nerd Font 11";
+    hover-select:        true;
+    me-select-entry:     "MouseSecondary";
+    me-accept-entry:     "MousePrimary";
+}
+
+@theme "~/.cache/wal/colors-rofi-dark"
+
+/* ── Palette ─────────────────────────────────────────────
+   accent follows your wallpaper (pywal). The rest are fixed
+   so the transparency stays predictable. */
+* {
+    background-color: transparent;
+    text-color:       @foreground;
+
+    accent:     @selected-normal-background;
+    muted:      rgba(242, 233, 244, 0.60);
+    bg-window:  rgba(15, 15, 22, 0.38);   /* raise 0.38 for a darker window */
+    bg-input:   rgba(255, 255, 255, 0.06);
+    sel-bg:     rgba(255, 255, 255, 0.10);
+    separator:  rgba(255, 255, 255, 0.08);
+}
+
+/* "real" is what lets Hyprland see through the window and blur it */
+window {
+    transparency:     "real";
+    location:         center;
+    width:            820px;
+    height:           480px;
+    border:           0px;
+    border-radius:    14px;
+    background-color: @bg-window;
+    children:         [ mainbox ];
+}
+
+mainbox {
+    orientation: horizontal;
+    children:    [ listbox, infobox ];
+}
+
+/* ── Left: search + list ─────────────────────────────── */
+listbox {
+    width:        42%;
+    padding:      16px;
+    spacing:      10px;
+    border:       0px 1px 0px 0px;
+    border-color: @separator;
+    children:     [ inputbar, listview ];
+}
+
+inputbar {
+    padding:          8px 12px;
+    border-radius:    8px;
+    background-color: @bg-input;
+    children:         [ textbox-prompt, entry ];
+    spacing:          8px;
+}
+
+textbox-prompt {
+    expand:         false;
+    str:            "";
+    text-color:     @accent;
+    vertical-align: 0.5;
+}
+
+entry {
+    placeholder:       "Search…";
+    placeholder-color: @muted;
+    cursor:            text;
+    vertical-align:    0.5;
+}
+
+listview {
+    columns:      1;
+    lines:        7;
+    spacing:      4px;
+    scrollbar:    false;
+    cycle:        true;
+    fixed-height: false;
+}
+
+element {
+    padding:       10px 10px;
+    spacing:       10px;
+    border-radius: 8px;
+    cursor:        pointer;
+}
+
+element selected {
+    background-color: @sel-bg;
+    text-color:       @foreground;
+}
+
+element-icon {
+    size:           30px;
+    vertical-align: 0.5;
+    cursor:         inherit;
+}
+
+element-text {
+    vertical-align: 0.5;
+    cursor:         inherit;
+    text-color:     inherit;
+}
+
+/* ── Right: centered icon + name ─────────────────────── */
+infobox {
+    padding:  28px;
+    spacing:  14px;
+    children: [ dummy-top, icon-current-entry, textbox-current-entry ];
+}
+
+dummy-top { expand: true; }
+
+icon-current-entry {
+    expand:           false;
+    size:             110px;
+    horizontal-align: 0.5;
+}
+
+textbox-current-entry {
+    expand:           true;
+    horizontal-align: 0.5;
+    vertical-align:   0.0;
+    font:             "JetBrainsMono Nerd Font Bold 15";
+}
