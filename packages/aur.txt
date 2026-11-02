@@ -1,0 +1,7 @@
+clipman
+librewolf-bin
+python-pywal16
+ttf-inter-variable
+visual-studio-code-bin
+xdg-desktop-portal-termfilechooser-hunkyburrito-git
+yay
