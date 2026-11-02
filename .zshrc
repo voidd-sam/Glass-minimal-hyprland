@@ -27,15 +27,9 @@ eval "$(fzf --zsh)"
 # Autosuggestion accept with right arrow
 bindkey '→' autosuggest-accept
 
-
-# Created by `pipx` on 2026-07-29 11:09:00
-export PATH="$PATH:/home/sam/.local/bin"
-
 # set fzf to fd
 export FZF_DEFAULT_COMMAND="fd --type f --strip-cwd-prefix"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
-
 
 # Prevent concurrent write corruption
 setopt APPEND_HISTORY          # Append instead of overwrite
