@@ -92,3 +92,4 @@ zram-generator
 zsh
 zsh-autosuggestions
 zsh-syntax-highlighting
+imagemagick

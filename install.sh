@@ -55,6 +55,13 @@ if [ -f "$SCRIPT_DIR/.zprofile" ]; then
   cp "$SCRIPT_DIR/.zprofile" "$HOME/.zprofile"
 fi
 
+# Copy wallpapers to ~/WALLPAPERS/
+if [ -d "$SCRIPT_DIR/WALLPAPERS" ]; then
+  echo "==> Copying wallpapers..."
+  mkdir -p "$HOME/WALLPAPERS"
+  cp -r "$SCRIPT_DIR/WALLPAPERS/." "$HOME/WALLPAPERS/"
+fi
+
 # 7. Rebuild font cache (or icons show as tofu)
 echo "==> Rebuilding font cache..."
 fc-cache -fv >/dev/null 2>&1 || true
