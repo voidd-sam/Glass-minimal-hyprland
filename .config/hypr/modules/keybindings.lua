@@ -7,7 +7,7 @@ local closeWindowBind = hl.bind(mainMod .. " + c", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
 
 hl.bind(
-	mainMod .. " + M",
+	mainMod .. "+ shift + M",
 	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
 )
 hl.bind(mainMod .. " + v", hl.dsp.exec_cmd("kitty -e nvim"))

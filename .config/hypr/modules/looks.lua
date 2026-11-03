@@ -37,7 +37,7 @@ hl.config({
 
 		blur = {
 			enabled = true,
-			size = 10,
+			size = 09,
 			passes = 3,
 			vibrancy = 0.1696,
 			new_optimizations = true,
@@ -51,9 +51,17 @@ hl.config({
 })
 
 hl.layer_rule({
-	blur = false,
-	ignore_alpha = false,
+	name = "waybar-blur",
 	match = { namespace = "waybar" },
+	blur = true,
+	ignore_alpha = 0.01,
+})
+
+hl.layer_rule({
+	name = "rofi-blur",
+	match = { namespace = "rofi" },
+	blur = true,
+	ignore_alpha = 0.01,
 })
 
 -- bouncy overshoot curve
