@@ -3,9 +3,19 @@ on = "o"
 run = "open --interactive"
 desc = "Open with picker"
 
+
+#   1. magick -> makes a small 704x760 copy of the wallpaper, cropped from the CENTER,
+#                and saves it to ~/.cache/rofi-wall.png (rofi's left card reads this file).
+#                The old copy is overwritten, so only one file ever exists.
+#                If the file was deleted, it is simply created again.
+#   2. awww img -> sets the desktop wallpaper.
+#   3. wal -i   -> generates the pywal colour palette (bar, rofi, terminal, etc.).
+# %h = the file you are hovering over in yazi.
+
+
 [[mgr.prepend_keymap]]
 on   = [ "g", "b" ]
-run  = 'shell -- awww img %h && wal -i %h --contrast 1'
+run  = 'shell -- magick %h -resize 704x760^ -gravity center -extent 704x760 ~/.cache/rofi-wall.png; awww img %h && wal -i %h --contrast 1'
 desc = "Set wall + pywal"
 
 [[mgr.prepend_keymap]]
