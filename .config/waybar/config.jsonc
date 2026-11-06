@@ -16,7 +16,6 @@
 
     "modules-center": [
         "clock",
-        "custom/clipboard"
     ],
 
     "modules-right": [
@@ -61,18 +60,11 @@
         "separate-outputs": true
     },
     
- /*clipboard module */  
- 
-    "custom/clipboard": {
-    "format": "󰅇",
-    "tooltip": false,
-    "on-click": "cliphist list | rofi -dmenu -theme ~/.config/rofi/config.rasi | cliphist decode | wl-copy"
-},
+
     
 
-    "clock": {
-        "format": "{:%H:%M}",
-        "format-alt": "{:%A, %d %B %Y}",
+     "clock": {
+        "format": "{:%H:%M | %e %b}",
         "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
         "calendar": {
             "mode": "month",
