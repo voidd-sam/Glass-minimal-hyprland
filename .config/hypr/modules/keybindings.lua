@@ -10,14 +10,20 @@ hl.bind(
 	mainMod .. "+ shift + M",
 	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
 )
-hl.bind(mainMod .. " + v", hl.dsp.exec_cmd("kitty -e nvim"))
+hl.bind(mainMod .. " + n", hl.dsp.exec_cmd("kitty -e nvim"))
 hl.bind(mainMod .. " + e", hl.dsp.exec_cmd(env.fileManager))
-hl.bind(mainMod .. " + n", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mainMod .. " + f", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + p", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + j", hl.dsp.layout("togglesplit")) -- dwindle only
 hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd("pkill rofi || rofi -show drun -show-icons"))
 hl.bind(mainMod .. " + l", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + p", hl.dsp.exec_cmd("kitty -e ~/projects/Ly-ric/launch.sh"))
+
+-- CLIPBOARD --
+hl.bind(
+	mainMod .. " + v",
+	hl.dsp.exec_cmd("cliphist list | rofi -dmenu -theme ~/.config/rofi/config.rasi | cliphist decode | wl-copy")
+)
 
 -- SCREENSHOT--
 --
