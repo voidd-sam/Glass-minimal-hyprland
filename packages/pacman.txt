@@ -29,7 +29,9 @@ gst-libav
 gst-plugin-pipewire
 gst-plugins-ugly
 gst-thumbnailers
+guvcview
 gvfs
+hypridle
 hyprland
 hyprlock
 imv
@@ -71,6 +73,7 @@ ripgrep
 rofi
 slurp
 smartmontools
+snapshot
 sof-firmware
 starship
 sudo
@@ -92,5 +95,3 @@ zram-generator
 zsh
 zsh-autosuggestions
 zsh-syntax-highlighting
-imagemagick
-hypridle
