@@ -95,3 +95,5 @@ zram-generator
 zsh
 zsh-autosuggestions
 zsh-syntax-highlighting
+rust
+rust-analyzer
