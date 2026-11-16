@@ -4,9 +4,9 @@
 
 <img src="assets/logo.png" alt="Logo" width="450" height="450" />
 
-A glass-style Hyprland desktop. Blurred bar and launcher, translucent windows, one for al, color palette generated from the wallpaper.
-
 <img src="assets/preview1.png" alt="Desktop" width="100%"/>
+
+A glass-style Hyprland desktop. Blurred bar and launcher, translucent windows, one for al, color palette generated from the wallpaper.
 
 </div>
 
