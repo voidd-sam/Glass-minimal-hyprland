@@ -1,12 +1,12 @@
 <div align="center">
 
-# Glass Minimal Hyprland
+# lace-hyprland
 
-<img src="assets/logo.png" alt="Logo" width="450" height="450" />
+<img src="assets/logo.png" alt="Logo" width="400" height="400" />
 
 <img src="assets/preview1.png" alt="Desktop" width="100%"/>
 
-A glass-style Hyprland desktop. Blurred bar and launcher, translucent windows, one for al, color palette generated from the wallpaper.
+A glass style Hyprland desktop. Blurred bar and launcher, translucent windows, one for al, color palette generated from the wallpaper.
 
 </div>
 
@@ -36,7 +36,7 @@ A glass-style Hyprland desktop. Blurred bar and launcher, translucent windows, o
 Arch Linux with `sudo`
 
 ```bash
-git clone https://github.com/voidd-sam/Glass-minimal-hyprland.git && cd Glass-minimal-hyprland && bash install.sh
+git clone https://github.com/voidd-sam/lace-hyprland.git && cd lace-hyprland && bash install.sh
 ```
 
 Then log out and log in on tty1.
@@ -170,7 +170,7 @@ Hyprlock colors come from pywal through the template `wal/templates/colors-hyprl
 ## Layout
 
 ```text
-Glass-minimal-hyprland/
+lace-hyprland/
 ├── .config/
 │   ├── hypr/             # hyprland.lua, modules/, hyprlock.conf, hypridle.conf
 │   ├── waybar/           # config.jsonc, style.css
