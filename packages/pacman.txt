@@ -98,3 +98,5 @@ zsh-syntax-highlighting
 rust
 rust-analyzer
 hyprsunset
+imagemagick
+
