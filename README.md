@@ -4,7 +4,7 @@
 
 <img src="assets/preview1.png" alt="Desktop" width="100%"/>
 
-A glass style Hyprland desktop. Blurred bar and launcher, translucent windows, one for al, color palette generated from the wallpaper.
+A glass style Hyprland desktop. Blurred bar and launcher, translucent windows, one color palette for all, color palette generated from the wallpaper using pywal16.
 
 </div>
 
