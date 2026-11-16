@@ -63,14 +63,3 @@ hl.layer_rule({
 	blur = true,
 	ignore_alpha = 0.01,
 })
-
--- bouncy overshoot curve
-hl.curve("overshot", { type = "bezier", points = { { 0.05, 0.9 }, { 0.1, 1.1 } } })
-
-hl.animation({
-	leaf = "workspaces",
-	enabled = true,
-	speed = 6,
-	bezier = "overshot",
-	style = "slide",
-})
