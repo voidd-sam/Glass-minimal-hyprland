@@ -24,9 +24,6 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
 
-# Autosuggestion accept with right arrow
-bindkey '→' autosuggest-accept
-
 # set fzf to fd
 export FZF_DEFAULT_COMMAND="fd --type f --strip-cwd-prefix"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
