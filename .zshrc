@@ -11,7 +11,6 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 # History
 HISTSIZE=10000
-HISTFILESIZE=20000
 SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
