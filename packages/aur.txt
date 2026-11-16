@@ -1,4 +1,3 @@
-clipman
 librewolf-bin
 python-pywal16
 ttf-inter-variable

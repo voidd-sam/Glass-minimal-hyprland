@@ -1,0 +1,62 @@
+# Optional, NOT installed by install.sh. Pick what you want:
+#   grep -vE '^\s*(#|$)' packages/extras.txt | sudo pacman -S --needed -
+# Hardware-specific lines are marked. Do not install them blindly.
+
+# NVIDIA RTX 20-series and newer only. lib32-* needs [multilib] in /etc/pacman.conf
+nvidia-open
+lib32-nvidia-utils
+lib32-vulkan-icd-loader
+libva-nvidia-driver
+
+# CPU microcode: amd-ucode on AMD, intel-ucode on Intel
+amd-ucode
+
+# base system (already present on any Arch install)
+base
+linux
+linux-firmware
+sof-firmware
+sudo
+efibootmgr
+zram-generator
+smartmontools
+wpa_supplicant
+
+# VPN
+wireguard-tools
+openresolv
+
+# apps
+firefox
+nautilus
+keepassxc
+obsidian
+qbittorrent
+syncthing
+docker
+docker-compose
+flatpak
+android-tools
+guvcview
+baobab
+snapshot
+cava
+tmux
+
+# file and media integration
+gvfs
+kde-cli-tools
+kio-extras
+polkit-kde-agent
+gst-libav
+gst-plugin-pipewire
+gst-plugins-ugly
+gst-thumbnailers
+uwsm
+ell
+tk
+
+# dev tools
+python-pip
+rust
+rust-analyzer

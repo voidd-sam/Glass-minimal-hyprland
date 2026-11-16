@@ -47,11 +47,13 @@ if [ -f "$SCRIPT_DIR/starship.toml" ]; then
   cp "$SCRIPT_DIR/starship.toml" "$HOME/.config/starship.toml"
 fi
 
-# shell configs (live at repo root, go to ~/)
+# shell configs (live at repo root, go to ~/), old ones are backed up first
 if [ -f "$SCRIPT_DIR/.zshrc" ]; then
+  [ -f "$HOME/.zshrc" ] && cp "$HOME/.zshrc" "$HOME/.zshrc.bak.$(date +%s)"
   cp "$SCRIPT_DIR/.zshrc" "$HOME/.zshrc"
 fi
 if [ -f "$SCRIPT_DIR/.zprofile" ]; then
+  [ -f "$HOME/.zprofile" ] && cp "$HOME/.zprofile" "$HOME/.zprofile.bak.$(date +%s)"
   cp "$SCRIPT_DIR/.zprofile" "$HOME/.zprofile"
 fi
 
@@ -62,10 +64,17 @@ if [ -d "$SCRIPT_DIR/WALLPAPERS" ]; then
   cp -r "$SCRIPT_DIR/WALLPAPERS/." "$HOME/WALLPAPERS/"
 fi
 
-# FOR GENERATING COLORS FOR EVERYTHING IT NEEDS TO RUN AFTER WALLPPAERS COPYED AND BEFORE FONT FONT CACHE
+# 7. File picker: install the edited yazi wrapper (opens yazi in a floating window)
+WRAPPER="$HOME/.config/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh"
+if [ -f "$WRAPPER" ]; then
+  echo "==> Installing file picker wrapper..."
+  chmod +x "$WRAPPER"
+  sudo install -m755 "$WRAPPER" /usr/share/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh
+fi
 
+# 8. Generate the first color palette (Waybar, Rofi, Kitty, Neovim and Hyprlock read it)
 echo "==> Generating first color palette..."
-FIRST_WALL="$(find "$HOME/WALLPAPERS" -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) | head -n1)"
+FIRST_WALL="$(find "$HOME/WALLPAPERS" -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) 2>/dev/null | head -n1)"
 if [ -n "$FIRST_WALL" ]; then
   mkdir -p "$HOME/.cache"
   magick "$FIRST_WALL" -resize 704x760^ -gravity center -extent 704x760 "$HOME/.cache/rofi-wall.png" || true
@@ -73,10 +82,11 @@ if [ -n "$FIRST_WALL" ]; then
 fi
 ln -sf "$HOME/.cache/wal/colors-waybar.css" "$HOME/.config/waybar/colors.css"
 
-# 7. Rebuild font cache (or icons show as tofu)
+# 9. Rebuild font cache (or icons show as tofu)
 echo "==> Rebuilding font cache..."
 fc-cache -fv >/dev/null 2>&1 || true
 
 echo ""
 echo "✓ Done."
 echo "  (Your old configs are at ~/.config.bak.<timestamp>)"
+echo "  Log in on tty1 to start Hyprland."
