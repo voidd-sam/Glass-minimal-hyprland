@@ -4,7 +4,7 @@
 
 <img src="assets/logo.png" alt="Logo" width="450" height="450" />
 
-A glass-style Hyprland desktop for Arch Linux. Blurred bar and launcher, translucent windows, one color palette generated from the wallpaper.
+A glass-style Hyprland desktop. Blurred bar and launcher, translucent windows, one for al, color palette generated from the wallpaper.
 
 <img src="assets/preview1.png" alt="Desktop" width="100%"/>
 
@@ -33,7 +33,7 @@ A glass-style Hyprland desktop for Arch Linux. Blurred bar and launcher, translu
 
 ## Install
 
-Arch Linux with `sudo` and an internet connection.
+Arch Linux with `sudo`
 
 ```bash
 git clone https://github.com/voidd-sam/Glass-minimal-hyprland.git && cd Glass-minimal-hyprland && bash install.sh
@@ -167,7 +167,7 @@ Hyprlock colors come from pywal through the template `wal/templates/colors-hyprl
 | No Bluetooth adapter                 | `sudo systemctl enable --now bluetooth.service`     |
 | Icons show as boxes                  | `fc-cache -f`                                       |
 
-## Project layout
+## layout
 
 ```text
 Glass-minimal-hyprland/
@@ -192,7 +192,3 @@ Glass-minimal-hyprland/
 ├── LICENSE
 └── README.md
 ```
-
-## License
-
-See [LICENSE](LICENSE).
