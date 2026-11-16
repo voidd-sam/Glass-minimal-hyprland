@@ -62,6 +62,17 @@ if [ -d "$SCRIPT_DIR/WALLPAPERS" ]; then
   cp -r "$SCRIPT_DIR/WALLPAPERS/." "$HOME/WALLPAPERS/"
 fi
 
+# FOR GENERATING COLORS FOR EVERYTHING IT NEEDS TO RUN AFTER WALLPPAERS COPYED AND BEFORE FONT FONT CACHE
+
+echo "==> Generating first color palette..."
+FIRST_WALL="$(find "$HOME/WALLPAPERS" -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) | head -n1)"
+if [ -n "$FIRST_WALL" ]; then
+  mkdir -p "$HOME/.cache"
+  magick "$FIRST_WALL" -resize 704x760^ -gravity center -extent 704x760 "$HOME/.cache/rofi-wall.png" || true
+  wal -q -n -i "$FIRST_WALL" --contrast 1 || true
+fi
+ln -sf "$HOME/.cache/wal/colors-waybar.css" "$HOME/.config/waybar/colors.css"
+
 # 7. Rebuild font cache (or icons show as tofu)
 echo "==> Rebuilding font cache..."
 fc-cache -fv >/dev/null 2>&1 || true
