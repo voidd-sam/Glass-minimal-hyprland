@@ -104,3 +104,6 @@ hl.bind("SUPER + B", hl.dsp.exec_cmd("kitty --class bluetui -e bluetui"))
 
 -- Super+W: wifi manager (nmtui)
 hl.bind("SUPER + W", hl.dsp.exec_cmd("kitty --class nmtui -e nmtui"))
+
+-- HYPERSUNSET KEYMAPS
+hl.bind("SUPER + F10", hl.dsp.exec_cmd("pkill hyprsunset || hyprsunset -t 4000"))
