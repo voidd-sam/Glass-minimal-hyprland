@@ -89,3 +89,10 @@ hl.window_rule({
 	float = true,
 	size = { 500, 600 },
 })
+
+hl.window_rule({
+	name = "filechooser-float",
+	match = { class = "termfilechooser" },
+	float = true,
+	size = { 900, 600 },
+})
