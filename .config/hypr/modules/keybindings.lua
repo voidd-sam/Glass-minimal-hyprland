@@ -17,7 +17,6 @@ hl.bind(mainMod .. " + p", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + j", hl.dsp.layout("togglesplit")) -- dwindle only
 hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd("pkill rofi || rofi -show drun -show-icons"))
 hl.bind(mainMod .. " + l", hl.dsp.exec_cmd("hyprlock"))
-hl.bind(mainMod .. " + p", hl.dsp.exec_cmd("kitty -e ~/projects/Ly-ric/launch.sh"))
 
 -- CLIPBOARD --
 hl.bind(

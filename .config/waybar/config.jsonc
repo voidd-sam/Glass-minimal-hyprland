@@ -1,137 +1,131 @@
 {
-    "layer": "top",
-    "position": "top",
-    "margin-top": 2,
-    "margin-left": 5,
-    "margin-right": 3,
-    "spacing": 0,
+  "layer": "top",
+  "position": "top",
+  "margin-top": 2,
+  "margin-left": 5,
+  "margin-right": 3,
+  "spacing": 0,
 
-    "modules-left": [
-        "custom/arch",
-        "hyprland/workspaces",
-        "custom/separator",
-        "hyprland/window"
-        
-    ],
+  "modules-left": [
+    "custom/arch",
+    "hyprland/workspaces",
+    "custom/separator",
+    "hyprland/window",
+  ],
 
-    "modules-center": [
-        "clock",
-    ],
+  "modules-center": ["clock"],
 
-    "modules-right": [
-        "pulseaudio",
-        "custom/separator",
-        "network",
-        "custom/separator",
-        "bluetooth",
-        "custom/separator",
-        "cpu",
-        "custom/separator",
-        "memory",
-        "custom/separator",
-        "temperature",
-        "custom/separator",
-        "battery",
-        "tray"
-    ],
+  "modules-right": [
+    "pulseaudio",
+    "custom/separator",
+    "network",
+    "custom/separator",
+    "bluetooth",
+    "custom/separator",
+    "cpu",
+    "custom/separator",
+    "memory",
+    "custom/separator",
+    "temperature",
+    "custom/separator",
+    "battery",
+    "tray",
+  ],
 
-    "custom/separator": {
-        "format": "·",
-        "tooltip": false
+  "custom/separator": {
+    "format": "·",
+    "tooltip": false,
+  },
+
+  "custom/arch": {
+    "format": "󰣇",
+    "tooltip": false,
+  },
+
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "warp-on-scroll": false,
+    "format": "{name}",
+    "on-click": "activate",
+  },
+
+  "hyprland/window": {
+    "format": "{class}",
+    "max-length": 35,
+    "tooltip": false,
+    "separate-outputs": true,
+  },
+
+  "clock": {
+    "format": "{:%H:%M | %e %b}",
+    "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#ffffff'><b>{}</b></span>",
+        "days": "<span color='#dddddd'>{}</span>",
+        "weekdays": "<span color='#aaaaaa'><b>{}</b></span>",
+        "today": "<span color='#ffffff'><b><u>{}</u></b></span>",
+      },
     },
+  },
 
-    "custom/arch": {
-        "format": "󰣇",
-        "tooltip": false
-     },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰖁",
+    "format-icons": { "default": ["󰕿", "󰖀", "󰕾"] },
+    "on-click": "pavucontrol",
+    "tooltip-format": "{desc} — {volume}%",
+  },
 
-    "hyprland/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": true,
-        "warp-on-scroll": false,
-        "format": "{name}",
-        "on-click": "activate"
-    },
+  "network": {
+    "format-wifi": "󰤨 {essid}",
+    "format-ethernet": "󰈀 Wired",
+    "format-disconnected": "󰤭",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ipaddr}",
+    "on-click": "kitty --class nmtui -e nmtui",
+    "max-length": 14,
+  },
 
-    "hyprland/window": {
-        "format": "{class}",
-        "max-length": 35,
-        "tooltip": false,
-        "separate-outputs": true
-    },
-    
+  "bluetooth": {
+    "format": "󰂯",
+    "format-connected": "󰂱 {device_alias}",
+    "tooltip-format": "{num_connections} connected",
+    "on-click": "kitty --class bluetui -e bluetui",
+  },
 
-    
+  "cpu": {
+    "format": "󰻠 {usage}%",
+    "interval": 3,
+    "tooltip": false,
+  },
 
-     "clock": {
-        "format": "{:%H:%M | %e %b}",
-        "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
-        "calendar": {
-            "mode": "month",
-            "on-scroll": 1,
-            "format": {
-                "months": "<span color='#ffffff'><b>{}</b></span>",
-                "days": "<span color='#dddddd'>{}</span>",
-                "weekdays": "<span color='#aaaaaa'><b>{}</b></span>",
-                "today": "<span color='#ffffff'><b><u>{}</u></b></span>"
-            }
-        }
-    },
+  "memory": {
+    "format": "󰍛 {percentage}%",
+    "interval": 5,
+    "tooltip-format": "{used:0.1f}G / {total:0.1f}G",
+  },
 
-    "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-muted": "󰖁",
-        "format-icons": { "default": ["󰕿", "󰖀", "󰕾"] },
-        "on-click": "pavucontrol",
-        "tooltip-format": "{desc} — {volume}%"
-    },
+  "temperature": {
+    "interval": 10,
+    "critical-threshold": 85,
+    "format-critical": "󰸁 {temperatureC}°",
+    "format": "󰔏 {temperatureC}°",
+  },
 
-    "network": {
-        "format-wifi": "󰤨 {essid}",
-        "format-ethernet": "󰈀 Wired",
-        "format-disconnected": "󰤭",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ipaddr}",
-        "on-click": "kitty --title nmtui -e nmtui",
-        "max-length": 14
-    },
+  "battery": {
+    "states": { "warning": 30, "critical": 15 },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰚥 {capacity}%",
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "tooltip-format": "{capacity}% — {timeTo}",
+  },
 
-    "bluetooth": {
-        "format": "󰂯",
-        "format-connected": "󰂱 {device_alias}",
-        "tooltip-format": "{num_connections} connected",
-        "on-click": "kitty --title bluetui -e bluetui"
-    },
-
-    "cpu": {
-        "format": "󰻠 {usage}%",
-        "interval": 3,
-        "tooltip": false
-    },
-
-    "memory": {
-        "format": "󰍛 {percentage}%",
-        "interval": 5,
-        "tooltip-format": "{used:0.1f}G / {total:0.1f}G"
-    },
-
-    "temperature": {
-        "interval": 10,
-        "critical-threshold": 85,
-        "format-critical": "󰸁 {temperatureC}°",
-        "format": "󰔏 {temperatureC}°"
-    },
-
-    "battery": {
-        "states": { "warning": 30, "critical": 15 },
-        "format": "{icon} {capacity}%",
-        "format-charging": "󰂄 {capacity}%",
-        "format-plugged": "󰚥 {capacity}%",
-        "format-icons": ["󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"],
-        "tooltip-format": "{capacity}% — {timeTo}"
-    },
-
-    "tray": {
-        "spacing": 10,
-        "icon-size": 15
-    }
+  "tray": {
+    "spacing": 10,
+    "icon-size": 15,
+  },
 }

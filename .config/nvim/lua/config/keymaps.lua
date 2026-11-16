@@ -3,7 +3,7 @@
 -- Add any additional keymaps here
 -- vim.g.mapleader = " "
 -- Select all and copy to system clipboard in one press
-vim.keymap.set("n", "<leader>a", "ggVG", { desc = "select all" })
+vim.keymap.set("n", "<leader>a", "<cmd>%y+<CR>", { desc = "Copy all to clipboard" })
 
 local fzf = require("fzf-lua")
 
