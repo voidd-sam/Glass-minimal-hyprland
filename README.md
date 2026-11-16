@@ -10,10 +10,11 @@ A glass style Hyprland desktop. Blurred bar and launcher, translucent windows, o
 
 ## About
 
-- Hyprland configured in Lua, split into small modules.
-- Colors come from the wallpaper through pywal. Change the wallpaper in yazi and everything follows.
+- Configration is split into small modules.
+- Colors come from the wallpaper through pywal16. Change the wallpaper in yazi and everything follows.
 - File pickers in GUI apps open yazi in a floating terminal instead of a GTK dialog.
-- No display manager, notification daemon or logout menu. Log in on tty1 and Hyprland starts from `.zshrc`.
+- No display manager, notification daemon or logout menu. coz thats bloat to me but you can add in yours thats upto you.
+- Log in on tty1 and Hyprland starts from `.zshrc`.
 
 ## Preview
 
