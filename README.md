@@ -2,8 +2,6 @@
 
 # lace-hyprland
 
-<img src="assets/logo.png" alt="Logo" width="400" height="400" />
-
 <img src="assets/preview1.png" alt="Desktop" width="100%"/>
 
 A glass style Hyprland desktop. Blurred bar and launcher, translucent windows, one for al, color palette generated from the wallpaper.
