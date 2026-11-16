@@ -167,7 +167,7 @@ Hyprlock colors come from pywal through the template `wal/templates/colors-hyprl
 | No Bluetooth adapter                 | `sudo systemctl enable --now bluetooth.service`     |
 | Icons show as boxes                  | `fc-cache -f`                                       |
 
-## layout
+## Layout
 
 ```text
 Glass-minimal-hyprland/
